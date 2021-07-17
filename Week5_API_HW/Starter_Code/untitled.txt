@@ -1,0 +1,38 @@
+# Import libraries and dependencies
+import numpy as np
+import pandas as pd
+import os
+import alpaca_trade_api as tradeapi
+import datetime as dt
+import pytz
+
+class MCSimulation:
+    """
+    A Python class for runnning Monte Carlo simulation on portfolio price data. 
+    
+    ...
+    
+    Attributes
+    ----------
+    portfolio_data : pandas.DataFrame
+        portfolio dataframe
+    weights: list(float)
+        portfolio investment breakdown
+    nSim: int
+        number of samples in simulation
+    nTrading: int
+        number of trading days to simulate
+    simulated_return : pandas.DataFrame
+        Simulated data from Monte Carlo
+    confidence_interval : pandas.Series
+        the 95% confidence intervals for simulated final cumulative returns
+        
+    """
+    
+    def __init__(self, portfolio_data, weights="", num_simulation=1000, num_trading_days=252):
+        """
+        Constructs all the necessary attributes for the MCSimulation object.
+
+        Parameters
+        ----------
+        portfolio_data: p
